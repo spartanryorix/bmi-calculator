@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="({url_for('static', filename='static.css')})">
+</head>
+<body>
+    <h1 class="display-2 text-center">BMI Calculator</h1><br>
+    <form method="POST" action="/">
+        <div class="mb-3 col-md-3 ps-4">
+            <label for="exampleFormControlInput1" class="form-label">Weight</label>
+            <input type="number" class="form-control" name="userweight" id="exampleFormControlInput1" min="0" required>
+            <span id="insertkg" class="form-text">
+                Type your weight in kilograms.
+            </span>
+          </div>
+          <div class="mb-3 col-md-3 ps-4" >
+            <label for="exampleFormControlInput2" class="form-label">Height</label>
+            <input type="number" class="form-control" name="userheight" id="exampleFormControlInput2" min="0" required>
+            <span id="insertkg" class="form-text">
+                Type your height in centimeters.
+            </span>
+            <br><br>
+            <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+        </div>
+    </form>
+    <br>
+
+    <div class="mb-3 col-md-3 ps-4 text-center lead">
+        {% if bmi %}
+            <p>Your BMI is {{bmi}}.</p>
+        {% endif %}
+    </div>
+
+       
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
